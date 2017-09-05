@@ -1,0 +1,381 @@
+@import 'src/styles/variables';
+.cmp-request-demo {
+  padding: 0;
+}
+
+.cmp-right-bar {
+  .aside {
+    right: -34rem;
+    width: 30rem;
+    padding: 4rem;
+    padding-top: 0rem;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    background-color: white;
+    z-index: 100500;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+    overflow-y: auto;
+  }
+  .aside-opened {
+    right: 0rem;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+  }
+  @media(max-width: 544px) {
+    .aside {
+      width: 100%;
+      padding: 1rem;
+      padding-top: 0;
+    }
+  }
+   ::-webkit-scrollbar {
+    display: none;
+  }
+  .shade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $gray-darkest;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .shade-opened {
+    visibility: visible;
+    opacity: 0.8;
+    filter: alpha(opacity=500);
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+    z-index: 30;
+  }
+  .aside-close {
+    height: 4rem;
+  }
+  .btn-close {
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    border: none;
+    background: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .icon-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    background: url('../../assets/images/close.png')
+  }
+  .btn-close:focus {
+    outline: none;
+  }
+  .aside {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    background-color: white;
+    z-index: 100500;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+    overflow-y: auto;
+  }
+  .aside-opened {
+    right: 0rem;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+  }
+  @media(max-width: 544px) {
+    .aside {
+      width: 100%;
+      padding: 1rem;
+      padding-top: 0;
+    }
+  }
+   ::-webkit-scrollbar {
+    display: none;
+  }
+  .shade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $gray-darkest;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .shade-opened {
+    visibility: visible;
+    opacity: 0.8;
+    filter: alpha(opacity=500);
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+    z-index: 30;
+  }
+  .aside-close {
+    height: 4rem;
+  }
+  .btn.btn-primary {
+    font-family: $backoffice-regular;
+  }
+  .header {
+    font-family: $backoffice-light;
+    color: #1e2046;
+    font-size: 1.875rem;
+  }
+  .form-control {
+    height: 2.8rem;
+    padding-left: 1.5rem;
+    border-radius: 2rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 1rem;
+    font-family: $backoffice-regular;
+    color: #1e2046;
+    &:hover,
+    &:active,
+    &:focus {
+      border: 1px solid #6ee7b0;
+    }
+  }
+  input[placeholder] {
+    color: #000;
+    font-size: 0.875rem;
+    font-family: $backoffice-regular;
+  }
+  label {
+    color: #656775;
+    margin-bottom: 0;
+    font-family: $backoffice-regular;
+    font-size: 0.875rem;
+  }
+  .form-group {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+  .dropdown-toggle {
+    padding-left: 1.5rem !important;
+    font-family: $backoffice-regular;
+    font-size: 1rem !important;
+    color: #1e2046;
+  }
+  .btn-group {
+    width: 100%;
+    height: 44px;
+  }
+  .dropdown-toggle {
+    width: 100%;
+    height: 2.75rem;
+    border-radius: 2rem;
+    background: #fff;
+    border: 1px solid #c4c4c4;
+    text-align: left;
+    padding-left: 1.5rem;
+    padding-right: 0.75rem;
+    font-size: 1rem;
+    color: #1e2046;
+    font-family: "Proxima Nova Regular", sans-serif;
+    padding-top: 0;
+    padding-bottom: 0;
+    &::after {
+      display: none !important;
+    }
+    &:hover {
+      border-color: $brand-primary;
+      .arrow-button {
+        background-image: url('../../assets/images/icon-arrow-hover.png');
+      }
+    }
+  }
+  .name {
+    display: block;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+  }
+  .arrow-button {
+    width: 8px;
+    height: 5px;
+    background-image: url('../../assets/images/icon-arrow-dark.png');
+    float: right;
+    cursor: pointer;
+    position: relative;
+    top: 0.75rem;
+    right: 0.5rem;
+  }
+  .dropdown-menu {
+    height: auto;
+    width: 100%;
+    padding: 0;
+    background: none;
+    border: none;
+    top: 3rem;
+    z-index: 3;
+    margin-top: 0;
+    box-shadow: 0 2px 8px 0px rgba(0, 0, 0, 0.5);
+    left: 0;
+    border-radius: 1rem;
+  }
+  .dropdown-item {
+    cursor: pointer;
+    background: #fff;
+    position: relative;
+    font-family: $backoffice-regular !important;
+    border-radius: none;
+    z-index: 1;
+    width: 100%;
+    height: 2rem;
+    line-height: 1.875rem;
+    &:first-child {
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      border-top: 1px solid lightgray;
+    }
+    &:last-child {
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      border-bottom: 1px solid lightgray;
+    }
+    &:hover {
+      background: #eef3f7;
+    }
+  }
+  .send {
+    display: block;
+    margin-top: 2rem;
+    border-radius: 3rem;
+    width: 7.5rem;
+    height: 2.5rem;
+    float: right;
+    font-size: 0.875rem;
+    border: none;
+    text-align: left;
+    padding: 0;
+    padding-left: 28px;
+    margin-bottom: 3rem;
+  }
+  .buttonName {
+    display: block;
+    float: left;
+  }
+  .arrow-submit {
+    width: 14px;
+    height: 10px;
+    background: url('../../assets/images/icon-arrow-submit.png');
+    top: 3px;
+    right: 20px;
+    position: relative;
+    float: right;
+  }
+  .checkMeth {
+    .btn-group {
+      width: 100%;
+      height: 44px;
+      border: 1px solid #d6d6d6;
+      border-radius: 2rem;
+      padding: 2px;
+    }
+    .default {
+      width: 50%;
+      height: 38px;
+      border: 1px solid #fff;
+      border-radius: 2rem;
+      border-top-left-radius: 2rem !important;
+      border-bottom-left-radius: 2rem !important;
+      background: #fff;
+      color: #1e2046;
+      font-size: 0.875rem;
+      float: left;
+      &:hover {
+        border-radius: 2rem !important;
+        background: #fff !important;
+        border: 1px solid #fff;
+        cursor: pointer;
+      }
+      &:focus {
+        outline: none;
+        border: 1px solid #fff !important;
+      }
+    }
+    .btn-primary {
+      padding-right: 1.5rem;
+      text-align: left;
+      padding-left: 44px;
+      &:focus {
+        outline: none;
+      }
+    }
+    .active {
+      width: 50%;
+      height: 38px;
+      border-radius: 2rem !important;
+      background: #3ecf8c;
+      font-size: 0.875rem;
+      &:hover {
+        background: #6ee7b0 !important;
+        border: none;
+        cursor: pointer;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    .btn-primary:active,
+    .btn-primary.active,
+    .open>.btn-primary.dropdown-toggle {
+      background: #3ecf8c;
+      border: 1px solid #3ecf8c;
+      color: #fff;
+      outline: none;
+    }
+    .icon-phone {
+      width: 16px;
+      height: 16px;
+      background: url('../../assets/images/icon-phone-default.png');
+      float: left;
+      margin-right: 9px;
+    }
+    .icon-mail {
+      width: 16px;
+      height: 14px;
+      background: url('../../assets/images/icon-mail-default.png');
+      float: left;
+      margin-right: 9px;
+    }
+    .phone.active {
+      .icon-phone {
+        background: url('../../assets/images/icon-phone-active.png');
+      }
+    }
+    .mail.active {
+      .icon-mail {
+        background: url('../../assets/images/icon-mail-active.png');
+      }
+    }
+  }
+}
+

@@ -1,0 +1,181 @@
+@import 'src/styles/variables';
+
+.cmp-footer {
+    background: #21282d;
+    float: left;
+    padding-top: 0.4rem;
+     padding-bottom: 0.5rem;
+    text-align: center;
+    width: 100%;
+    overflow-x: hidden !important;
+ 
+    h6 {
+        color: #fff;
+        text-align: center;
+        padding-top: 0.75rem;
+        font-family: $backoffice-regular;
+        letter-spacing: 1px;
+        font-size: 0.8125rem;
+       // @media(max-width: 575px) {
+       //     padding-top: 1rem;
+       //}
+        @media(max-width: 384px){
+            width: 11rem;
+            display: block;
+            margin: 0 auto;
+            padding-top: 0.25rem; //if social section is hidden. You should delete this line later.
+        }
+        @media(min-width: 576px) and  (max-width: 651px){
+            width: 11rem;
+             display: block;
+            margin: 0 auto;
+            padding-top: 0.25rem;
+        }
+     
+    }
+    .right{
+        padding-bottom: 1rem;
+    }
+    .left{
+            padding-bottom: 0; 
+    }
+    .right {
+        height: 2.5rem;
+        @media(max-width: 991px) {
+            padding-left: 15px;
+            padding-right: 0;
+        }
+        @media(max-width: 767px) {
+            padding-left: 0;
+            padding-right: 30px;
+        }
+        @media(max-width:575px) {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+    }
+    .facebook {
+        height: 2rem;
+        width: 2rem;
+        margin-top: 0.3rem;
+        display: block;
+        float: left;
+        margin-left: 0.7rem;
+        margin-right: 0.7rem;
+    }
+   
+    span {
+        color: $brand-primary;
+        font-family: $backoffice-regular;
+    }
+    .socials {
+        display: flex;
+       width: 100%;
+       //width: 1rem;
+        height: 1.75rem;
+       margin-top: 0.25rem;
+     
+        .social {
+           // margin-right: 2rem;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .facebook {
+            background: url('../../assets/images/icon-facebook-default.png');
+            width: 8px;
+            height: 16px;
+            float: left;
+            &:hover {
+                background: url('../../assets/images/icon-facebook-hover.png');
+            }
+        }
+        .twitter {
+            background: url('../../assets/images/icon-twitter-default.png');
+            width: 16px;
+            height: 13px;
+            float: left;
+            margin-top: 8px;
+            &:hover {
+                background: url('../../assets/images/icon-twitter-hover.png');
+            }
+        }
+        .linked {
+            background: url('../../assets/images/icon-linked-default.png');
+            width: 16px;
+            height: 15px;
+            float: left;
+            display: block;
+            margin: 0 auto;
+            margin-top: 0.25rem;
+            &:hover {
+                background: url('../../assets/images/icon-linked-hover.png');
+                cursor: pointer;
+            }
+            @media(max-width: 575px){
+                margin-top: 0;
+            }
+            @media(max-width: 384px){
+                margin-top: 0.25rem;
+            }
+            &:focus{
+                outline: none;
+            }
+        }
+        .google {
+            background: url('../../assets/images/icon-google-default.png');
+            width: 16px;
+            height: 16px;
+            float: left;
+            margin-top: 6px;
+            &:hover {
+                background: url('../../assets/images/icon-google-hover.png');
+            }
+        }
+        .youtube {
+            background: url('../../assets/images/icon-youtube-default.png');
+            width: 24px;
+            height: 20px;
+            float: left;
+            margin-top: 3px;
+            margin-right: 0;
+            &:hover {
+                background: url('../../assets/images/icon-youtube-hover.png');
+            }
+        }
+    }
+    .bottom{
+        border-top: 1px solid #2e383f;
+       height: 2.5rem;
+            padding-top: 0.75rem;
+        @media(max-width: 400px){
+            padding-left: 0;
+            padding-right: 0;
+        }
+      
+    }
+    .policy{
+        height: 100%;
+        margin: 0 auto;
+         @media(max-width: 400px){
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        .item{
+            display: block;
+            float: left;
+            width: calc(100%/3);
+            height: 1.25rem;
+            font-size: 0.875rem;
+            font-family: $backoffice-regular;
+            color: $brand-primary;
+            text-align: center;
+            text-decoration: underline;
+            border-right: 1px solid #2e383f;
+            cursor: pointer;
+        }
+        .item:nth-child(3){
+            border-right: none;
+        }
+    }
+}

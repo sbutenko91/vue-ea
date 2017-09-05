@@ -1,532 +1,160 @@
 <template>
   <div id="home">
     <cmp-header></cmp-header>
-    <div class="wrapper-page">
-    <section class="cmp-main mask">
-      <div class="section-fullscreen container" id="top">
-      </div>
-      <div class="container text-center main-text">
-        <h3 class="tagline">гучне втілення</h3>
-        <h3 class="tagline">яскравих ідей</h3>
-      </div>
-    </section>
-    <section class="cmp-services">
-      <div class="section-services container" id="service">
-        <div class="service-content">
-        <div class="row">
-          <div class="col-12">
-            <h1 class="text-center title">послуги</h1>
-            <p class="text-default text-center">West-sound - повне технічне забезпечення вашого заходу.
-              <br/> Ми потурбуємось усіма аспектами вашого шоу.</p>
-            <div class="gradient-line"></div>
+    <div id="top" class="component-site-home">
+      <cmp-demo :barOpened="BarOpened" @close="barOpened = false"></cmp-demo>
+      <div class="cmp-full-screen container-fluid" id="home">
+        <div class="row row-fluid text-xs-center">
+          <div class="col-xs-12 col-sm-10 offset-sm-1 col-md-10 offset-md-1 col-lg-10 offset-lg-1 col-xl-10 offset-xl-1 text-center">
+            <h1 class="text-main">Automate supplier
+              <span class="text-primary">discounts</span> and maximise your
+              <span class="text-primary">savings</span>.
+            </h1>
+            <button type="button" id="videobutton" class="btn btn-outline-primary" @click="showModal()">WATCH THE VIDEO</button>
+            <button type="button" id="requestbutton" class="btn btn-outline-primary active" @click="OpenBar()">REQUEST A DEMO</button>
           </div>
-        </div>
-        <div class="row wrapper-services">
-          <div class="col-xs-12 col-sm-6 col-lg-3">
-            <img class="img-circle" src="./../../assets/sound.png">
-            <p class="item">звук</p>
-            <p class="text-default">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-               when an unknown printer took a galley of type and scrambled it to make.</p>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-3">
-            <img class="img-circle" src="./../../assets/light.png">
-            <p class="item">світло</p>
-            <p class="text-default">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-               when an unknown printer took a galley of type and scrambled it to make.</p>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-3">
-            <img class="img-circle" src="./../../assets/scene.png">
-            <p class="item">сцена</p>
-            <p class="text-default">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-               when an unknown printer took a galley of type and scrambled it to make.</p>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-3">
-            <img class="img-circle" src="./../../assets/screen.png">
-            <p class="item">екрани</p>
-            <p class="text-default">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-               when an unknown printer took a galley of type and scrambled it to make.</p>
-          </div>
-        </div>
         </div>
       </div>
-    </section>
-    <section class="cmp-about-us">
-        <div class="section-about container" id="aboutus">
-          <div class="row">
-          <div class="col-12 col-sm-6 left">
-            <div class="wrapper-about">
-              <div class="layout">
-                <h1 class="title">про нас</h1>
-                <p class="text-about">
-                  Компанія "Вест Саунд" почала свою діяльність у  1999 році. 
-                  На сьогоднішній день, ми є однією з провідних  компаній у Захiдному регіоні України в сфері технічного забезпечення культурно масових заходів (сцена, звук, світло),  концертів, акцій тощо. 
-                  Пропонуємо звук, світло, сцену різних конфігурацій.
-                </p>
-                <h2 class="list-services">до ваших послуг</h2>
-                <p class="text-about rental">
-                  <ul>
-                    <li>Оренда сцени;</li>
-                    <li>Оренда звуку;</li>
-                    <li>Оренда свIтла;</li>
-                    <li>IнсталяцIя обладнання;</li>
-                    <li>Виготовлення професIйноI тари RACK;</li>
-                    <li>Конструювання I виробництво акустичних систем пIд замовлення.</li>
-                  </ul>
-                </p>
+
+      <transition name="fade">
+        <div id="imageModal" class="modal container-fluid" v-if="show == true" @click="closeModal">
+          <div class="modal-opacity"></div>
+          <div class="wrapper-modal">
+            <div class="modal-content">
+            <button type="button" class="btn btn-danger cancel" @click="closeModal"><div class="cancel-icon"></div></button>
+              <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="https://player.vimeo.com/video/212211173?autoplay=1" width="640px" height="360px" align="middle" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
               </div>
             </div>
           </div>
-          </div>
         </div>
-    </section>
-    <section class="cmp-equipment">
-      <div class="section-equipment container" id="equipment">
-        <div class="equipment-content">
-        <div class="row">
-          <div class="col-12">
-            <h1 class="text-center title">обладнання</h1>
-            <div class="gradient-line"></div>
-          </div>
-        </div>
-        <div class="row wrapper-equipment">
-          <div class="col-xs-12 col-md-4 block">
-            <h3 class="item-equipment">світло</h3>
-            <hr/>
-            <div class="row">
-              <div class="col-6">
-                <p class="text-default">l’acoustics</p>
-                <p class="text-default">mag audio</p>
-                <p class="text-default">shure</p>
-                <p class="text-default">sennheiser</p>
-                <p class="text-default">fender</p>
-                <p class="text-default">ampeg</p>
-                <p class="text-default">DW</p>
-                <p class="text-default">Tama</p>
-              </div>
-              <div class="col-6">
-                <p class="text-default">Yamaha</p>
-                <p class="text-default">Allen&heath</p>
-                <p class="text-default">mesa boogie</p>
-                <p class="text-default">powersoft</p>
-                <p class="text-default">qsc</p>
-                <p class="text-default">obe</p>
-                <p class="text-default">dbx</p>
-                <p class="text-default">tc electronic</p>
-              </div>
-            </div>
-            </div>
-          <div class="col-12 col-md-4 block">
-            <h3 class="item-equipment">звук</h3>
-            <hr/>
-            <div class="row">
-              <div class="col-6">
-                <p class="text-default">beam head</p>
-                <p class="text-default">spot head</p>
-                <p class="text-default">wash head</p>
-                <p class="text-default">beam-spot head</p>
-                <p class="text-default">led par</p>
-                <p class="text-default">lamp par</p>
-                <p class="text-default">follow spot</p>
-                <p class="text-default">blinder light</p>
-              </div>
-              <div class="col-6">
-                <p class="text-default">strobe light</p>
-                <p class="text-default">martin lighting</p>
-                <p class="text-default">chamsys lighting</p>
-                <p class="text-default">dmx</p>
-                <p class="text-default">uplighting</p>
-                <p class="text-default">static & dynamic lights</p>
-              </div>
-            </div>
-            </div>
-          <div class="col-12 col-md-4 block">
-            <h3 class="item-equipment">сцена</h3>
-            <hr/>
-            <div class="row">
-              <div class="col-6">
-                <p class="text-default">сценiчнi  конструкцii</p>
-                <p class="text-default">подiуми</p>
-                <p class="text-default">Layher</p>
-                <p class="text-default">лiфтова сцена</p>
-                <p class="text-default">збiрна фермова сцена</p>
-                <p class="text-default">конструкцii для пiдвiсу </p>
-                <p class="text-default">звуку та свiтла</p>
-                <p class="text-default">послуги рiгерid</p>
-              </div>
-              <div class="col-6">
-                <p class="text-default">конструкцii пiд екран</p>
-              </div>
-            </div>
-           </div>
-        </div>
-        </div>
-      </div>
-    </section>
-    <section class="cmp-gallery">
-      <div class="section-gallery container" id="gallery">
-        <div class="gallery-content">
-        <div class="row">
-          <div class="col-12">
-            <h1 class="text-center title">фото</h1>
-          </div>
-        </div>
-        <div class="row wrapper-gallery">
-          <div class="col-6 col-md-2 photo">
-            <div class="mask">
-              <img class="img-fluid"  src="./../../assets/photo1.png">
-              <div class="zoom"></div>
-            </div>
-          </div>
-          <div class="col-6 col-md-2 photo">
-            <div class="mask">
-              <img class="img-fluid"  src="./../../assets/photo1.png">
-              <div class="zoom"></div>
-            </div>
-          </div>
-          <div class="col-6 col-md-2 photo">
-            <div class="mask">
-              <img class="img-fluid"  src="./../../assets/photo1.png">
-              <div class="zoom"></div>
-            </div>
-          </div>
-          <div class="col-6 col-md-2 photo">
-            <div class="mask">
-              <img class="img-fluid"  src="./../../assets/photo1.png">
-              <div class="zoom"></div>
-            </div>
-          </div>
-          <div class="col-6 col-md-2 photo">
-            <div class="mask">
-              <img class="img-fluid"  src="./../../assets/photo1.png">
-              <div class="zoom"></div>
-            </div>
-          </div>
-          <div class="col-6 col-md-2 photo">
-            <div class="mask">
-              <img class="img-fluid"  src="./../../assets/photo1.png">
-              <div class="zoom"></div>
-            </div>
-          </div>
-          <div class="col-6 col-md-2 photo">
-            <div class="mask">
-              <img class="img-fluid"  src="./../../assets/photo1.png">
-              <div class="zoom"></div>
-            </div>
-          </div>
-          <div class="col-6 col-md-2 photo">
-            <div class="mask">
-              <img class="img-fluid"  src="./../../assets/photo1.png">
-              <div class="zoom"></div>
-            </div>
-          </div>
-          <div class="col-6 col-md-2 photo">
-            <div class="mask">
-              <img class="img-fluid"  src="./../../assets/photo1.png">
-              <div class="zoom"></div>
-            </div>
-          </div>
-          <div class="col-6 col-md-2 photo">
-            <div class="mask">
-              <img class="img-fluid"  src="./../../assets/photo1.png">
-              <div class="zoom"></div>
-            </div>
-          </div>
-          <div class="col-6 col-md-2 photo">
-            <div class="mask" v-on:click="showModal">
-              <img class="img-fluid" src="./../../assets/photo1.png">
-              <div class="zoom"></div>
-            </div>
-          </div>
-          <div class="col-6 col-md-2 photo">
-            <div class="mask">
-              <img class="img-fluid"  src="./../../assets/photo1.png">
-              <div class="zoom"></div>
-            </div>
-          </div>
-          <div class="col-6 col-md-2 photo">
-            <div class="mask">
-              <img class="img-fluid"  src="./../../assets/photo1.png">
-              <div class="zoom"></div>
-            </div>
-          </div>
-          <div class="col-6 col-md-2 photo">
-            <div class="mask">
-              <img class="img-fluid"  src="./../../assets/photo1.png">
-              <div class="zoom"></div>
-            </div>
-          </div>
-          <div class="col-6 col-md-2 photo">
-            <div class="mask">
-              <img class="img-fluid"  src="./../../assets/photo1.png">
-              <div class="zoom"></div>
-            </div>
-          </div>
-          <div class="col-6 col-md-2 photo">
-            <div class="mask">
-              <img class="img-fluid"  src="./../../assets/photo1.png">
-              <div class="zoom"></div>
-            </div>
-          </div>
-          <div class="col-6 col-md-2 photo">
-            <div class="mask">
-              <img class="img-fluid"  src="./../../assets/photo1.png">
-              <div class="zoom"></div>
-            </div>
-          </div>
-          <div class="col-6 col-md-2 photo">
-            <div class="mask">
-              <img class="img-fluid"  src="./../../assets/photo1.png">
-              <div class="zoom"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row wrapper-pagination">
-          <div class="pagination">
-            <div class="left">
-              <div class="arrow arrow-left"></div>
-            </div>
-            <div class="center">
-              <div class="counter"><span class="active-page">5</span>/100</div>
-            </div>
-            <div class="right">
-              <div class="arrow arrow-right"></div>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
-    </section>
-     <transition name="fade">
-    <div id="imageModal" class="modal" v-if="show == true" v-on:click="closeModal">
-      <div class="modal-opacity"></div>
-      <div class="wrapper-modal">
-        <div class="modal-content">
-        <div class="arrow arrow-left"></div>
-          <div class="close" v-on:click="closeModal"></div>
-          <img class="img-fluid" src="./../../assets/photo-full.jpg">
-        <div class="arrow arrow-right"></div>
-        </div>
-      </div>
-    </div>
      </transition>
-    <section class="cmp-clients">
-      <div class="section-clients container" id="clients">
-        <div class="clients-content">
-          <div class="row">
-            <div class="col-12">
-              <h1 class="text-center title">наші клієнти</h1>
-              <div class="gradient-line"></div>
-            </div>
+
+      <div class="cmp-about-product container-fluid" id="product">
+        <div class="row test">
+          <div class="col-xs-12 col-sm-12  col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+            <h3 class="title">ABOUT
+              <span class="title2">PRODUCT</span>
+            </h3>
+            <h5 class="text-main">EarlyAce automates your supplier discounting process and improves your profitability, risk-free, by maximising early payment discount capture. Your suppliers can view all the invoices you wish to pay early and make real-time discount offers. EarlyAce automatically selects the best invoices for you to pay early.
+            </h5>
           </div>
-          <div class="row wrapper-clients">
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/1.png">
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 offset-xl-1">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#buyer" role="tab">EARLYACE FOR BUYERS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#supplier" role="tab">EARLYACE FOR SUPPLIERS</a>
+              </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div class="tab-pane active" id="buyer" role="tabpanel">
+                <div class="row">
+                  <div class="col-8 offset-2 col-sm-6 offset-sm-3 col-md-4 offset-md-0 col-lg-4 offset-lg-0 col-xl-4 offset-xl-0 ben">
+                    <div class="icon-area">
+                      <div class="i icon1"></div>
+                    </div>
+                    <p class="text-benefit">Increase profitability</p>
+                  </div>
+                  <div class="col-8 offset-2 col-sm-6 offset-sm-3 col-md-4 offset-md-0 col-lg-4 offset-lg-0 col-xl-4 offset-xl-0 ben">
+                    <div class="icon-area">
+                      <div class="i icon2"></div>
+                    </div>
+                    <p class="text-benefit">Earn risk-free cash returns</p>
+                  </div>
+                  <div class="col-8 offset-2 col-sm-6 offset-sm-3 col-md-4 offset-md-0 col-lg-4 offset-lg-0 col-xl-4 offset-xl-0 ben">
+                    <div class="icon-area">
+                      <div class="i icon3"></div>
+                    </div>
+                    <p class="text-benefit">Healthier supply chain</p>
+                  </div>
+                  <div class="col-8 offset-2 col-sm-6 offset-sm-3 col-md-4 offset-md-2 col-lg-4 offset-lg-2 col-xl-4 offset-xl-2 ben">
+                    <div class="icon-area">
+                      <div class="i icon4"></div>
+                    </div>
+                    <p class="text-benefit">Outperform low yielding short-term investments</p>
+                  </div>
+                  <div class="col-8 offset-2 col-sm-6 offset-sm-3 col-md-4 offset-md-0 col-lg-4 offset-lg-0 col-xl-4 offset-xl-0 ben">
+                    <div class="icon-area">
+                      <div class="i icon5"></div>
+                    </div>
+                    <p class="text-benefit">Simple onboarding process</p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/2.jpg">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/3.jpg">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/4.png">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/5.jpg">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/6.jpg">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/7.jpg">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/8.jpg">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/9.jpg">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/10.jpg">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/11.jpg">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/12.jpg">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/13.jpg">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/15.jpg">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/14.jpg">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/16.jpg">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/17.jpg">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/18.jpg">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/19.jpg">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/20.png">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/21.png">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/22.jpg">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/23.jpg">
-              </div>
-            </div>
-            <div class="col-4 col-md-2 item">
-              <div class="client-block">
-              <img class="img-fluid" src="./../../assets/24.jpg">
+              <div class="tab-pane" id="supplier" role="tabpanel">
+                <div class="row">
+                  <div class="col-8 offset-2 col-sm-6 offset-sm-3 col-md-4 offset-md-0 col-lg-4 offset-lg-0 col-xl-4 offset-xl-0 ben">
+                    <div class="icon-area">
+                      <div class="i icon6"></div>
+                    </div>
+                    <p class="text-benefit">Improve cashflow</p>
+                  </div>
+                  <div class="col-8 offset-2 col-sm-6 offset-sm-3 col-md-4 offset-md-0 col-lg-4 offset-lg-0 col-xl-4 offset-xl-0 ben">
+                    <div class="icon-area">
+                      <div class="i icon7"></div>
+                    </div>
+                    <p class="text-benefit">Accelerate invoice payments in a few clicks</p>
+                  </div>
+                  <div class="col-8 offset-2 col-sm-6 offset-sm-3 col-md-4 offset-md-0 col-lg-4 offset-lg-0 col-xl-4 offset-xl-0 ben">
+                    <div class="icon-area">
+                      <div class="i icon8"></div>
+                    </div>
+                    <p class="text-benefit">No middlemen – 100% free to use</p>
+                  </div>
+                  <div class="col-8 offset-2 col-sm-6 offset-sm-3 col-md-4 offset-md-2 col-lg-4 offset-lg-2 col-xl-4 offset-xl-2 ben">
+                    <div class="icon-area">
+                      <div class="i icon9"></div>
+                    </div>
+                    <p class="text-benefit">Access early payment as needed</p>
+                  </div>
+                  <div class="col-8 offset-2 col-sm-6 offset-sm-3 col-md-4 offset-md-0 col-lg-4 offset-lg-0 col-xl-4 offset-xl-0 ben">
+                    <div class="icon-area">
+                      <div class="i icon10"></div>
+                    </div>
+                    <p class="text-benefit">No complicated paperwork</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section class="cmp-contact">
-      <div class="section-contact container" id="contact">
-        <div class="contact-content">
-          <div class="row">
-            <div class="col-12 col-sm-6 form">
-              <h1>напишіть нам</h1>
-              <form>
-                <div class="form-group">
-                  <label for="name">Ім'я</label>
-                  <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="введіть ім'я">
-                </div>
-                <div class="form-group">
-                  <label for="email">E-mail</label>
-                  <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="введіть email">
-                </div>
-                <div class="form-group">
-                  <label for="phoneNumber">Телефон</label>
-                  <input type="number" class="form-control" id="phoneNumber" aria-describedby="phoneNumber" placeholder="введіть телефон">
-                </div>
-                <div class="form-group">
-                  <label for="exampleTextarea">Повідомлення</label>
-                  <textarea class="form-control" id="exampleTextarea" rows="4" maxlength="600"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">відправити</button>
-              </form>
-            </div>
-          </div>
-        </div>
+      <div id="contact" style="float:left; width: 100%">
+        <cmp-contact></cmp-contact>
       </div>
-    </section>
-    <section class="cmp-footer">
-      <div class="section-footer container" id="footer">
-        <div class="footer-content">
-          <div class="row">
-            <div class="col-12 col-md-6 col-lg-3 block company">
-              <div class="logo-footer"></div>
-              <p class="rights">© 2017 westsound</p>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 block address">
-              <p class="header-text">адреса та контакти</p>
-              <ul class="label">
-                <li>адреса:</li>
-                <li>телефон:</li>
-                <li>mail:</li>
-              </ul>
-              <ul class="data">
-                <li>м. Львів, вул. Збоїща 4 </li>
-                <li>067 275 65 45</li>
-                <li>dzupyn@gmail.com</li>
-              </ul>
-            </div>
-             <div class="col-12 col-md-6 col-lg-3 block social">
-              <p class="header-text">ми в соц. мережах</p>
-              <div class="icons">
-                <div class="icon youtube"></div>
-                <div class="icon facebook"></div>
-                <div class="icon instagram"></div>
-              </div>
-             </div>
-             <div class="col-12 col-md-6 col-lg-3 block creators">
-              <p class="header-text">сайт розроблено студією</p>
-              <p class="name">company name</p>
-              <p class="header-text">дизайнер сайту</p>
-              <p class="name">valentyn hnot</p>
-            </div>
-          </div>
-        </div>
+      <div id="footer">
+        <cmp-footer></cmp-footer>
       </div>
-    </section>
     </div>
   </div>
 </template>
 
 <script>
 import Header from './../header/Header.vue'
+import Contact from './../contact-us/Contact.vue'
+import Footer from './../footer/Footer.vue'
+import RequestDemo from './../demo/DemoRequest.vue'
 export default {
   name: 'home',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      BarOpened: false,
       show: false
     }
   },
   methods: {
+    OpenBar: function () {
+      this.BarOpened = !this.BarOpened
+      console.log(this.BarOpened)
+    },
     showModal: function () {
       this.show = true
     },
@@ -535,7 +163,10 @@ export default {
     }
   },
   components: {
-    'cmp-header': Header
+    'cmp-header': Header,
+    'cmp-contact': Contact,
+    'cmp-footer': Footer,
+    'cmp-demo': RequestDemo
   }
 }
 </script>

@@ -1,0 +1,189 @@
+@import 'src/styles/variables';
+.cmp-contact-us {
+  background: #f2f5f6; //background: #fff;
+  padding-top: 6.5rem;
+  padding-bottom: 4rem;
+  @media(max-width: 1700px) {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+  .title {
+    text-align: center;
+    color: $gray-darkest;
+    margin-bottom: 0; //padding-bottom: 1.5rem;
+    font-size: 1.875rem;
+    font-family: $backoffice-bold;
+    margin-bottom: 1rem;
+    @media(max-width: 992px) {
+      padding-bottom: 1rem;
+    }
+  }
+  .title2 {
+    color: $brand-primary;
+  }
+  .form-control {
+    font-family: $backoffice-regular;
+  }
+  .inp {
+    height: 5rem;
+    margin-bottom: 0.5rem;
+    @media(max-width: 767px) {
+      margin-top: 0;
+    }
+  }
+  .input:focus {
+    outline: none !important;
+  }
+  input:hover {
+    border: 1px solid $brand-primary;
+  }
+  .area {
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  textarea:hover {
+    border: 1px solid #6ee7b0;
+  }
+  textarea {
+    padding: 1rem;
+    line-height: 2;
+    font-size: 1rem;
+    color: #1e2046;
+    padding-left: 1.5rem;
+    padding-top: 0.5rem !important;
+  }
+  .btn-primary {
+    display: block;
+    margin: 28px auto;
+    height: 2.75rem;
+    border-radius: 1.375rem;
+    width: 9.5rem;
+    font-family: $backoffice-regular;
+    padding: 0;
+    text-align: center;
+    font-size: 0.875rem;
+  }
+  .btn-primary:hover {
+    background: #6ee7b0;
+    border: 1px solid #6ee7b0;
+  }
+  label {
+    font-family: $backoffice-regular;
+    color: #656775;
+    font-size: 0.875rem;
+    margin-bottom: 0;
+  }
+  .btn-primary:focus {
+    outline: none;
+    background: $brand-primary;
+    border: none;
+  }
+  input {
+    height: 2.75rem;
+    padding-left: 1.5rem;
+    color: #1e2046;
+  }
+  .form-control {
+    border-radius: 2rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    &:hover,
+    &:active,
+    &:focus {
+      border: 1px solid #6ee7b0;
+    }
+  }
+  input {
+    -moz-appearance: textfield;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+    background-color: #fff !important;
+  } // dropdown button
+  .btn-group {
+    width: 100%;
+    height: 44px;
+  }
+  .dropdown-toggle {
+    width: 100%;
+    height: 2.75rem;
+    border-radius: 2rem;
+    background: #fff;
+    border: 1px solid #c4c4c4;
+    text-align: left;
+    padding-left: 1.5rem;
+    padding-right: 0.75rem;
+    font-size: 1rem;
+    color: #1e2046;
+    font-family: "Proxima Nova Regular", sans-serif;
+    padding-top: 0;
+    padding-bottom: 0;
+    &::after {
+      display: none !important;
+    }
+    &:hover {
+      border-color: $brand-primary;
+      .arrow-button {
+        background-image: url('../../assets/images/icon-arrow-hover.png');
+      }
+    }
+  }
+  .name {
+    display: block;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+  }
+  .arrow-button {
+    width: 8px;
+    height: 5px;
+    background-image: url('../../assets/images/icon-arrow-dark.png');
+    float: right;
+    cursor: pointer;
+    position: relative;
+    top: 0.75rem;
+    right: 0.5rem;
+  }
+  .dropdown-menu {
+    height: auto;
+    width: 100%;
+    padding: 0;
+    background: none;
+    border: none;
+    top: 3rem;
+    z-index: 3;
+    margin-top: 0;
+    box-shadow: 0 2px 8px 0px rgba(0, 0, 0, 0.5);
+    left: 0;
+    border-radius: 1rem;
+  }
+  .dropdown-item {
+    cursor: pointer;
+    background: #fff;
+    position: relative;
+    font-family: $backoffice-regular !important;
+    border-radius: none;
+    z-index: 1;
+    width: 100%;
+    height: 2rem;
+    line-height: 1.875rem;
+    &:first-child {
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      border-top: 1px solid lightgray;
+    }
+    &:last-child {
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      border-bottom: 1px solid lightgray;
+    }
+    &:hover {
+      background: #eef3f7;
+    }
+  }
+}
+
