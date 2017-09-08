@@ -56,7 +56,7 @@
                     <div class="col-xs-12 col-md-6">
                         <div :class="{ 'has-danger' : errors.has('phoneNumber')}" class="form-group inp">
                             <label for="phoneNumber">PHONE NUMBER*</label>
-                            <input type="text" onlyNumber class="form-control" v-model="ContactRequest.phoneNumber" v-validate="'required|numeric'" id="phoneNumber" placeholder="" name="phoneNumber" oninput="this.value = this.value.replace(/[^0-9, +.]/g, '').replace(/(\..*)\./g, '$1');">
+                            <input type="text" onlyNumber class="form-control" v-model="ContactRequest.phoneNumber" v-validate="'required|numeric'" id="phoneNumber" placeholder="" name="phoneNumber" oninput="this.value = this.value.replace(/[^0-9,+.]/g, '').replace(/(\..*)\./g, '$1');">
                             <div class="form-control-feedback" v-show="errors.has('phoneNumber')">Please enter your phone number</div>
                         </div>
                     </div>

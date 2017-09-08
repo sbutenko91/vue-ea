@@ -42,7 +42,7 @@
 
                         <div :class="{ 'has-danger' : errors.has('phoneNumber')}" class="form-group ">
                             <label for="phone">PHONE NUMBER*</label>
-                            <input type="input" v-model="DemoRequest.phoneNumber" class="form-control" v-validate="'required|numeric'" id="phone" name="phoneNumber" oninput="this.value = this.value.replace(/[^0-9, +.]/g, '').replace(/(\..*)\./g, '$1');">
+                            <input type="input" v-model="DemoRequest.phoneNumber" class="form-control" v-validate="'required|numeric'" id="phone" name="phoneNumber" oninput="this.value = this.value.replace(/[^0-9,+.]/g, '').replace(/(\..*)\./g, '$1');">
                             <div class="form-control-feedback" v-show="errors.has('phoneNumber')">Please enter phone number</div>
                         </div>
                         <div class="form-group checkMeth">
