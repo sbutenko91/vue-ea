@@ -1,7 +1,7 @@
 <template>
     <div id="header">
       <nav class="navbar navbar-toggleable-md navbar-light bg-faded" id="navbar">
-    <button class="navbar-toggler navbar-toggler-right" @click="IsCollapsed=!IsCollapsed" type="button" data-toggle="collapse"
+    <button class="navbar-toggler navbar-toggler-right" @click="isCollapsed=!isCollapsed" type="button" data-toggle="collapse"
         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon">
         </span>
@@ -16,16 +16,16 @@
         </a>
 
         <ul class="nav navbar-nav">
-            <li :class="{active : activeIndex == 0 }" @click="IsCollapsed=!IsCollapsed" class="nav-item">
+            <li :class="{active : activeIndex == 0 }" @click="isCollapsed=!isCollapsed" class="nav-item">
                 <a class="nav-link" href="#top" v-scroll-to="'#top'">HOME </a>
             </li>
-            <li :class="{active : activeIndex == 1 }" @click="IsCollapsed=!IsCollapsed" class="nav-item">
+            <li :class="{active : activeIndex == 1 }" @click="isCollapsed=!isCollapsed" class="nav-item">
                 <a class="nav-link" href="#product" v-scroll-to="'#product'">PRODUCT </a>
             </li>
-            <li class="nav-item" href="#contact" @click="IsCollapsed=!IsCollapsed">
+            <li class="nav-item" href="#contact" @click="isCollapsed=!isCollapsed">
                 <button type="button" href="#contact" v-scroll-to="'#contact'" class="btn btn-primary">CONTACT US</button>
             </li>
-            <li class="nav-item" @click="IsCollapsed=!IsCollapsed">
+            <li class="nav-item" @click="isCollapsed=!isCollapsed">
                 <button type="button" id="login" class="btn btn-outline-primary">LOGIN</button>
             </li>
             <!--<li class="nav-item ">
@@ -42,15 +42,15 @@ export default {
   name: 'header',
   data () {
     return {
-      IsCollapsed: false,
+      isCollapsed: false,
       activeIndex: 0,
       scrollPosition: null
     }
   },
   methods: {
-    SelectMenuItem (index) {
+    selectMenuItem (index) {
       this.activeIndex = index
-      this.IsCollapsed = false
+      this.isCollapsed = false
     },
     updateScroll () {
       this.scrollPosition = window.scrollY
@@ -63,13 +63,13 @@ export default {
       let product = document.getElementById('product')
       let contact = document.getElementById('contact')
       if (currPos > top.offsetTop) {
-        this.SelectMenuItem(0)
+        this.selectMenuItem(0)
       }
       if (currPos > product.offsetTop) {
-        this.SelectMenuItem(1)
+        this.selectMenuItem(1)
       }
       if (currPos > contact.offsetTop) {
-        this.SelectMenuItem(2)
+        this.selectMenuItem(2)
       }
     }
     window.addEventListener('scroll', this.updateScroll)

@@ -2,7 +2,7 @@
   <div id="home">
     <cmp-header></cmp-header>
     <div id="top" class="component-site-home">
-      <cmp-demo :barOpened="barOpened" v-on:CloseBar="changeBool($event)"></cmp-demo>
+      <cmp-demo :barOpened="barOpened" v-on:closeBar="isRightBarClosed($event)"></cmp-demo>
       <div class="cmp-full-screen container-fluid" id="home">
         <div class="row row-fluid text-xs-center">
           <div class="col-xs-12 col-sm-10 offset-sm-1 col-md-10 offset-md-1 col-lg-10 offset-lg-1 col-xl-10 offset-xl-1 text-center">
@@ -11,7 +11,7 @@
               <span class="text-primary">savings</span>.
             </h1>
             <button type="button" id="videobutton" class="btn btn-outline-primary" @click="showVideoModal()">WATCH THE VIDEO</button>
-            <button type="button" id="requestbutton" class="btn btn-outline-primary active" @click="OpenBar()">REQUEST A DEMO</button>
+            <button type="button" id="requestbutton" class="btn btn-outline-primary active" @click="openBar()">REQUEST A DEMO</button>
           </div>
         </div>
       </div>
@@ -151,9 +151,8 @@ export default {
     }
   },
   methods: {
-    OpenBar: function () {
+    openBar: function () {
       this.barOpened = true
-      console.log(this.barOpened)
     },
     showVideoModal: function () {
       this.showVideo = true
@@ -161,8 +160,8 @@ export default {
     closeVideoModal: function () {
       this.showVideo = false
     },
-    changeBool: function (updatedBool) {
-      this.barOpened = updatedBool
+    isRightBarClosed: function (isClosedBar) {
+      this.barOpened = isClosedBar
     }
   },
   components: {
