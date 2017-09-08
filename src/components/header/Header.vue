@@ -26,7 +26,7 @@
                 <button type="button" href="#contact" v-scroll-to="'#contact'" class="btn btn-primary">CONTACT US</button>
             </li>
             <li class="nav-item" @click="IsCollapsed=!IsCollapsed">
-                <button type="button" id="login" class="btn btn-outline-primary" @click="OnLoginClick()">LOGIN</button>
+                <button type="button" id="login" class="btn btn-outline-primary">LOGIN</button>
             </li>
             <!--<li class="nav-item ">
                 <button type="button " class="btn btn-primary " @click="OnRequestDemoClick() ">DEMO</button>

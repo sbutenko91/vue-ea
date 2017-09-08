@@ -2,7 +2,7 @@
   <div id="home">
     <cmp-header></cmp-header>
     <div id="top" class="component-site-home">
-      <cmp-demo :barOpened="BarOpened" @close="barOpened = false"></cmp-demo>
+      <cmp-demo :barOpened="barOpened" v-on:CloseBar="changeBool($event)"></cmp-demo>
       <div class="cmp-full-screen container-fluid" id="home">
         <div class="row row-fluid text-xs-center">
           <div class="col-xs-12 col-sm-10 offset-sm-1 col-md-10 offset-md-1 col-lg-10 offset-lg-1 col-xl-10 offset-xl-1 text-center">
@@ -10,18 +10,18 @@
               <span class="text-primary">discounts</span> and maximise your
               <span class="text-primary">savings</span>.
             </h1>
-            <button type="button" id="videobutton" class="btn btn-outline-primary" @click="showModal()">WATCH THE VIDEO</button>
+            <button type="button" id="videobutton" class="btn btn-outline-primary" @click="showVideoModal()">WATCH THE VIDEO</button>
             <button type="button" id="requestbutton" class="btn btn-outline-primary active" @click="OpenBar()">REQUEST A DEMO</button>
           </div>
         </div>
       </div>
 
       <transition name="fade">
-        <div id="imageModal" class="modal container-fluid" v-if="show == true" @click="closeModal">
+        <div id="videoModal" class="modal container-fluid" v-if="showVideo == true" @click="closeVideoModal">
           <div class="modal-opacity"></div>
           <div class="wrapper-modal">
             <div class="modal-content">
-            <button type="button" class="btn btn-danger cancel" @click="closeModal"><div class="cancel-icon"></div></button>
+            <button type="button" class="btn btn-danger cancel" @click="closeVideoModal"><div class="cancel-icon"></div></button>
               <div class="embed-responsive embed-responsive-16by9">
                     <iframe src="https://player.vimeo.com/video/212211173?autoplay=1" width="640px" height="360px" align="middle" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
               </div>
@@ -146,20 +146,23 @@ export default {
   name: 'home',
   data () {
     return {
-      BarOpened: false,
-      show: false
+      barOpened: false,
+      showVideo: false
     }
   },
   methods: {
     OpenBar: function () {
-      this.BarOpened = !this.BarOpened
-      console.log(this.BarOpened)
+      this.barOpened = true
+      console.log(this.barOpened)
     },
-    showModal: function () {
-      this.show = true
+    showVideoModal: function () {
+      this.showVideo = true
     },
-    closeModal: function () {
-      this.show = false
+    closeVideoModal: function () {
+      this.showVideo = false
+    },
+    changeBool: function (updatedBool) {
+      this.barOpened = updatedBool
     }
   },
   components: {
